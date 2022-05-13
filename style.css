@@ -1,9 +1,19 @@
-body {
-background-color: antiquewhite;
+* {
 text-align: center;
+margin-top: 10px;
 }
 
-.article {
-    background-color: white;
-    text-align: right;
+nav {display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 50px;
+    margin: 0;
+}
+
+.container {
+    background-color: beige;
+    height: 500px;
+    width: 700px;
+    margin: auto;
 }
