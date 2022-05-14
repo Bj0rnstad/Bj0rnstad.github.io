@@ -1,11 +1,13 @@
 * {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 text-align: center;
 margin-top: 0;
 margin-left: 0;
 margin-right: 0;
 }
 
-nav {display: flex;
+nav > h1 {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: aquamarine;
