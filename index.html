@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Sluse</title>
 <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.0.js"></script>
 </head>
 
 <body>
@@ -20,8 +21,36 @@
 
     <article class="container">
         <h1>Bilde av slusen eller faktisk få modellen inn</h1>
-        <img src="bilder/sluse.png" alt="sluse" height="450px" width="750px">
-        <p>Her er et renderet bilde av slusen vi har laget i Blender. </p>
+                <!-- Insert an empty iframe with attributes -->
+    <iframe src="https://sketchfab.com/models/3d8f60b901e4470da374792e3f26404c/embed%22%3E" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    <!-- Initialize the viewer -->
+    <script type="text/javascript">
+    var iframe = document.getElementById( 'api-frame' );
+    var uid = '3d8f60b901e4470da374792e3f26404c';
+
+    // By default, the latest version of the viewer API will be used.
+    var client = new Sketchfab( iframe );
+
+    // Alternatively, you can request a specific version.
+    // var client = new Sketchfab( '1.12.0', iframe );
+
+    client.init( uid, {
+        success: function onSuccess( api ){
+            api.start();
+            api.addEventListener( 'viewerready', function() {
+
+                // API is ready to use
+                // Insert your code here
+                console.log( 'Viewer is ready' );
+
+            } );
+        },
+        error: function onError() {
+            console.log( 'Viewer error' );
+        }
+    } );
+    </script>
     </article>
 
     <article class="container">
@@ -29,8 +58,6 @@
         <video src="bilder/video-av-sluse.mp4" height="450px" width="750px" controls></video>
         <p>video av en fantastisk sluse</p>
     </article>
-
-    <div class="sketchfab-embed-wrapper"> <iframe title="Improved-sluse 5" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3d8f60b901e4470da374792e3f26404c/embed%22%3E </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/improved-sluse-5-3d8f60b901e4470da374792e3f26404c?utm_medium=embed&utm_campaign=share-popup&utm_content=3d8f60b901e4470da374792e3f26404c" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Improved-sluse 5 </a> by <a href="https://sketchfab.com/haakonbergtun?utm_medium=embed&utm_campaign=share-popup&utm_content=3d8f60b901e4470da374792e3f26404c" target="_blank" style="font-weight: bold; color: #1CAAD9;"> haakonbergtun </a> on <a href="https://sketchfab.com/?utm_medium=embed&utm_campaign=share-popup&utm_content=3d8f60b901e4470da374792e3f26404c" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
 
     <article class="container">
         <h1>hjelp</h1>
