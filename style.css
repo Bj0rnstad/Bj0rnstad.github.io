@@ -19,8 +19,9 @@ nav > h1 {
 
 .container {
     background-color: #417D7A;
-    height: 600px;
+    height: auto;
     width: 900px;
     margin: auto;
+    padding-bottom: 5px;
     margin-bottom: 10px;
 }
