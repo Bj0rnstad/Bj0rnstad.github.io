@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,18 +22,16 @@
     <article class="container">
         <h1>Modell fra Sketchfab</h1>
     
-        <!-- Insert an empty iframe with attributes -->
-    <iframe src="https://sketchfab.com/models/3d8f60b901e4470da374792e3f26404c/embed%22%3E" id="api-frame" 
-    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking 
-    execution-while-out-of-viewport 
-    execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <!-- iframe med link til modellen fra Sketchfab -->
+    <iframe src="https://sketchfab.com/models/3d8f60b901e4470da374792e3f26404c/embed%22%3E" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" 
+    xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
     <!-- Initialize the viewer -->
     <script type="text/javascript">
     var iframe = document.getElementById( 'api-frame' );
     var uid = '3d8f60b901e4470da374792e3f26404c';
 
-    // By default, the latest version of the viewer API will be used.
+    // Som standardinstilling, vil alltid den nyeste versjonen av viewer API-et bli brukt.
     var client = new Sketchfab( iframe );
 
     client.init( uid, {
@@ -42,8 +39,7 @@
             api.start();
             api.addEventListener( 'viewerready', function() {
 
-                // API is ready to use
-                // Insert your code here
+                // API-et er klart for bruk
                 console.log( 'Viewer is ready' );
 
             } );
