@@ -34,9 +34,6 @@
     // By default, the latest version of the viewer API will be used.
     var client = new Sketchfab( iframe );
 
-    // Alternatively, you can request a specific version.
-    // var client = new Sketchfab( '1.12.0', iframe );
-
     client.init( uid, {
         success: function onSuccess( api ){
             api.start();
