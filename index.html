@@ -35,16 +35,18 @@
 
             var client = new Sketchfab( iframe ); // Som standardinstilling, vil alltid den nyeste versjonen av viewer API-et bli brukt.
 
-            client.init( uid, {
-                success: function onSuccess( api ){
+            client.init( uid, 
+            {
+                success: function onSuccess( api )
+                {
                     api.start();
-                    api.addEventListener( 'viewerready', function() {
-
+                    api.addEventListener( 'viewerready', function() 
+                    {
                         console.log( 'Viewer is ready' ); // API-et er klart for bruk
-
                     } );
                 },
-                error: function onError() {
+                error: function onError() 
+                {
                     console.log( 'Viewer error' ); //feil med å vise fram modell
                 }
             } );
