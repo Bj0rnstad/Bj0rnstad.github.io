@@ -23,33 +23,34 @@
         <h1>Modell fra Sketchfab</h1>
     
         <!-- iframe med attributter -->
-    <iframe src="" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" 
-    xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <iframe src="" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" 
+            xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered 
+            web-share allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true">
+        </iframe>
 
-    <!-- Initialize the viewer -->
-    <script type="text/javascript">
-    var iframe = document.getElementById( 'api-frame' );
-    var uid = '3d8f60b901e4470da374792e3f26404c';
+        <!-- initialiser viewer -->
+        <script type="text/javascript">
+            var iframe = document.getElementById( 'api-frame' );
+            var uid = '3d8f60b901e4470da374792e3f26404c'; // henter uid fra URL-en https://sketchfab.com/3d-models/improved-sluse-5-3d8f60b901e4470da374792e3f26404c
 
-    // Som standardinstilling, vil alltid den nyeste versjonen av viewer API-et bli brukt.
-    var client = new Sketchfab( iframe );
+            var client = new Sketchfab( iframe ); // Som standardinstilling, vil alltid den nyeste versjonen av viewer API-et bli brukt.
 
-    client.init( uid, {
-        success: function onSuccess( api ){
-            api.start();
-            api.addEventListener( 'viewerready', function() {
+            client.init( uid, {
+                success: function onSuccess( api ){
+                    api.start();
+                    api.addEventListener( 'viewerready', function() {
 
-                // API-et er klart for bruk
-                console.log( 'Viewer is ready' );
+                        console.log( 'Viewer is ready' ); // API-et er klart for bruk
 
+                    } );
+                },
+                error: function onError() {
+                    console.log( 'Viewer error' ); //feil med å vise fram modell
+                }
             } );
-        },
-        error: function onError() {
-            console.log( 'Viewer error' );
-        }
-    } );
-    </script>
-    <p>Modellen vår hentet fra Sketchfab med et JavaScript-API, som gjør det mulig å kunne rotere, zoome og bevege på kameraet.</p>
+        </script>
+
+        <p>Modellen vår hentet fra Sketchfab med et JavaScript-API, som gjør det mulig å kunne rotere, zoome og bevege på kameraet.</p>
     </article>
 
     <article class="container">
